@@ -1,0 +1,12 @@
+.github/
+.gitignore
+.vscode/
+build/
+data/
+node_modules/
+scripts/
+test/
+.npmrc
+.prettierignore
+.prettierrc.json
+package-lock.json
