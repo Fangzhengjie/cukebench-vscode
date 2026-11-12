@@ -1,0 +1,5 @@
+build/
+node_modules/
+data/gherkin-languages.json
+syntaxes/gherkin.tmLanguage.json
+package-lock.json

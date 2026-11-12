@@ -1,0 +1,67 @@
+{
+  "name": "cukebench",
+  "displayName": "Cukebench",
+  "description": "Run, navigate and manage Cucumber tests in any language",
+  "version": "0.0.1",
+  "publisher": "fangzhengjie",
+  "author": "Fangzhengjie",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fangzhengjie/cukebench-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fangzhengjie/cukebench-vscode/issues"
+  },
+  "homepage": "https://github.com/Fangzhengjie/cukebench-vscode#readme",
+  "keywords": [
+    "cucumber",
+    "gherkin",
+    "bdd",
+    "feature",
+    "testing"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Testing"
+  ],
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "gherkin",
+        "aliases": [
+          "Gherkin",
+          "Cucumber Feature"
+        ],
+        "extensions": [
+          ".feature"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gherkin",
+        "scopeName": "text.gherkin.cukebench",
+        "path": "./syntaxes/gherkin.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "generate": "node scripts/generate-grammar.mjs",
+    "check:generated": "node scripts/generate-grammar.mjs --check",
+    "test": "vscode-tmgrammar-test \"test/grammar/**/*.feature\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run check:generated && npm test",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "4.1.0",
+    "prettier": "3.10.1",
+    "vscode-tmgrammar-test": "0.1.3"
+  }
+}
